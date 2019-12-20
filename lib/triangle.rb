@@ -1,3 +1,6 @@
+# The sum of the lengths of any two sides of a triangle always exceeds the length of the third side. This is a principle known as the triangle inequality.
+# Further, each side must be larger than 0.
+
 class Triangle
   attr_accessor :side_1, :side_2, :side_3, :kind 
   
@@ -7,9 +10,6 @@ class Triangle
     @side_3 = side_3 
   end 
   
-  # The sum of the lengths of any two sides of a triangle always exceeds the length of the third side. This is a principle known as the triangle inequality.
-
-  # Further, each side must be larger than 0.
   def triangle_valid_error 
     (side_1 + side_2) <= side_3 || (side_1 + side_3) <= side_2 || 
     (side_3 + side_2) <= side_1 || (side_1 * side_2 * side_3) == 0
