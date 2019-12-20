@@ -19,12 +19,16 @@ class Triangle
     side_1 == side_2 && side_1 == side_3
   end 
   
+  def tri_isosceles 
+    side_1 == side_2 ||  side_1 == side_3 || side_2 == side_3
+  end 
+  
   def kind
     if triangle_valid_error 
       raise TriangleError
     elsif tri_equilateral 
       "equilateral".to_sym 
-    elsif side_1 == side_2 ||  side_1 == side_3 || side_2 == side_3 
+    elsif tri_isosceles 
       "isosceles".to_sym 
     else 
       "scalene".to_sym 
