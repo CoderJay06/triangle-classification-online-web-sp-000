@@ -15,10 +15,14 @@ class Triangle
     (side_3 + side_2) <= side_1 || (side_1 * side_2 * side_3) == 0
   end 
   
+  def tri_equilateral
+    side_1 == side_2 && side_1 == side_3
+  end 
+  
   def kind
     if triangle_valid_error 
       raise TriangleError
-    elsif side_1 == side_2 && side_1 == side_3
+    elsif tri_equilateral 
       "equilateral".to_sym 
     elsif side_1 == side_2 ||  side_1 == side_3 || side_2 == side_3 
       "isosceles".to_sym 
